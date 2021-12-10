@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6"><b>Enter User Information in the Form Below</b></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <form action="{{ url_for('home')}}" method="post">
+                <div class="col-sm-3"><br>
+
+                        <label for="CreditScore">Credit Score:</label><br>
+                        <input type="number" min="300" max="850" required="required" id="CreditScore"
+                            name="CreditScore"><br>
+                        <label for="geography">Country:</label><br>
+                        <select name="Geography" required="required" id="Geography">
+                            <option disabled selected value> -- select -- </option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Spain">Spain</option>
+                        </select><br>
+                        <label for="gender">Gender:</label><br>
+                        <select name="gender" required="required" id="gender">
+                            <option disabled selected value> -- select -- </option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </select><br>
+                        <label for="Age">Age:</label><br>
+                        <input type="number" required="required" min="18" id="Age" name="Age"><br>
+                        <label for="Tenure">Years as Bank Customer:</label><br>
+                        <input type="number" required="required" id="Tenure" name="Tenure"><br>
+                        <label for="Balance">Account Balance:</label><br>
+                        <input type="number" step="any" required="required" id="Balance" name="Balance"><br>
+                </div><br>
+                <div class="col-sm-3"><br>
+
+                    <label for="NumofProducts">Number of Products Used:</label><br>
+                    <select name="NumofProducts" required="required" id="NumofProducts">
+                        <option disabled selected value> -- select -- </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select><br>
+
+                    <label for="HasCrCard">Has an Active Credit Card:</label><br>
+                    <select name="HasCrCard" required="required" id="HasCrCard"><br>
+                        <option disabled selected value> -- select -- </option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select><br>
+                    <label for="isActiveMember">Is an Active Bank Member:</label><br>
+                    <select name="isActiveMember" required="required" id="isActiveMember">
+                        <option disabled selected value> -- select -- </option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    <br>
+                    <label for="EstimatedSalary">Estimated Salary:</label><br>
+                    <input type="number" min="0" step="any" required="required" id="EstimatedSalary"
+                        name="EstimatedSalary"><br>
+
+                    <br><br>
+
+                    <button type="submit" id="submit" value='predict' class="btn btn-success">Predict</button></form>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
